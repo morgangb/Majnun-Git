@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 199: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Can she be buried in Guyana?"
-                                  ^
+File "game/script.rpy", line 423: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Fuck off."
+               ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Jan 31 14:06:28 2022
+Mon Jan 31 19:44:08 2022
