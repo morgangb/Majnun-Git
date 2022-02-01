@@ -31,6 +31,10 @@ label start:
 
     scene black
 
+    "This game was inspired real people and movements, but is a work of fiction."
+
+    "Its content may not be suitable for all players."
+
     menu:
         "Select scene."
 
@@ -395,8 +399,6 @@ label start:
                                 "There's no way that's true.":
                                     frankwilliams "No way?"
 
-                                    frankwilliams "Malcolm X, shot to death in '65."
-
                                     frankwilliams "Seven dead in the Tate-LaBianca murders in '69."
 
                                     frankwilliams "Fifteen killed by the 'Death Angels' - so-called Black Muslims - from '73 to '74."
@@ -408,17 +410,26 @@ label start:
                                     frankwilliams "Oh, and I shouldn't forget: Jonestown, Guyana. Almost a thousand dead in '78."
 
                                     menu:
+                                        "Fine I get it.":
+                                            frankwilliams "Good."
+
+                                            jump .hereswhatido
+
                                         "That doesn't prove your point. You just listed examples.":
                                             frankwilliams "Sorry I don't have the precise statistics to hand, but you get my meaning."
 
                                             frankwilliams "People are dying. I stop that from happening."
 
+                                            jump .hereswhatido
+
                         "Are you trying to make me feel guilty?":
-                            frankwilliams "No. I'm trying to help you do something."
+                            frankwilliams "Not yet. I'm trying to help you do something."
 
                             frankwilliams "I'm trying to help you move on."
 
                             frankwilliams "I'm trying to stop you from losing yourself."
+
+                            jump .hereswhatido
 
                         "Fuck off.":
                             frankwilliams "Fuck you."
@@ -427,10 +438,229 @@ label start:
 
                             frankwilliams "You're gonna hear me out and you're gonna listen."
 
-                            #label .hereswhatido:
+                            jump .hereswhatido
 
+            label .hereswhatido:
+                frankwilliams "Here's what's happening."
+
+                frankwilliams "Hundreds of people don't die in a single incident because they're in their right minds."
+
+                frankwilliams "People don't just join cults because they see something the ordinary person doesn't."
+
+                frankwilliams "They're brainwashed."
+
+                frankwilliams "Someone's fucked with their heads, and now they'll happily give their time, their money, their lives, to a cause they hadn't heard about a year ago."
+
+                frankwilliams "Now their friends and their family from before the cult got to them realize that something's happened."
+
+                frankwilliams "Their son, or their daughter, or their sister, isn't who they used to be."
+
+                frankwilliams "But they say everything is just fine."
+
+                frankwilliams "They say they're happy now."
+
+                frankwilliams "They say they don't want to leave."
+
+                frankwilliams "When really, they're dying."
+
+                frankwilliams "It may be slow or it may be quick but that cult is taking away their lives."
+
+                frankwilliams "All things considered, I'm sure you see the need to do whatever it takes to save them. Right?"
+
+                menu:
+                    frankwilliams "All things considered, I'm sure you see the need to do whatever it takes to save them. Right?"
+
+                    "Right.":
+                        frankwilliams "Damn right."
+
+                        jump .hereswhatsgoingon
+
+                    "There's got to be a limit.":
+                        frankwilliams "In saving a life? Shit..."
+
+                        frankwilliams "Look at like this."
+
+                        frankwilliams "If someone was trying to kill you, you'd fight back."
+
+                        frankwilliams "If someone was trying to kill someone else, you'd stop them."
+
+                        frankwilliams "And if you hurt the attacker, well then you'd be justified."
+
+                        frankwilliams "It's reasonable force."
+
+                        frankwilliams "It's proportional."
+
+                        jump .hereswhatsgoingon
+
+                    "If they say they're happy, no one should intervene with that?":
+                        frankwilliams "Yeah? I bet your sister told you she was happy."
+
+                        frankwilliams "Did you even try to get her out from under Jim Jones?"
+
+                        menu:
+                            frankwilliams "Did you even try to get her out from under Jim Jones?"
+
+                            "I tried.":
+                                frankwilliams "You tried. And it wasn't enough, was it?"
+
+                                frankwilliams "I'm telling you, I've got a method that works."
+
+                                frankwilliams "Clara will tell you that."
+
+                                frankwilliams "A hundred other people will tell you that."
+
+                                frankwilliams "I'm telling you that there's a way to stop what happened to your sister from happening to anyone else, and you're not interested?"
+
+                                menu:
+                                    frankwilliams "I'm telling you that there's a way to stop what happened to your sister from happening to anyone else, and you're not interested?"
+
+                                    "I'm not interested.":
+                                        frankwilliams "For real?"
+
+                                        menu:
+                                            frankwilliams "For real?"
+
+                                            "For real. I'm not interested.":
+                                                frankwilliams "I guess Clara misjudged you. I'll see you around."
+
+                                                hide frankwilliams
+
+                                                "Frank walks away."
+
+                                                jump roaduntaken
+
+                                            "Fine... I'm interested.":
+                                                frankwilliams "Good. Now listen."
+
+                                                jump .hereswhatsgoingon
+
+                                    "I'm interested. Go on.":
+                                        frankwilliams "Good. Now listen."
+
+                                        jump .hereswhatsgoingon
+
+                label .hereswhatsgoingon:
+                    frankwilliams "The parents or the family or the friends of the kid, the cultist, the one that got brainwashed, they call me."
+
+                    frankwilliams "They tell me what's happening."
+
+                    frankwilliams "I put together a team. Maybe me and one other person, sometimes two."
+
+                    frankwilliams "We get the kid somewhere that's safe and quiet and that they can't leave, whether they want to or not."
+
+                    frankwilliams "We then sit down, and we talk to them."
+
+                    frankwilliams "We make them snap out of it."
+
+                    frankwilliams "We get them to see what's real and what isn't."
+
+                    frankwilliams "And, after a little while, they snap back to reality."
+
+                    frankwilliams "Sometimes it takes a day. Sometimes it takes a week. But we get them back."
+
+                    frankwilliams "I make sure they're gonna be safe with their family again."
+
+                    frankwilliams "I make sure that if anything else happens, they know who to call."
+
+                    frankwilliams "Then I take my pay, and I go."
+
+                    frankwilliams "Any questions?"
+
+                    label .anyquestions:
+                        menu:
+                            frankwilliams "Any questions?"
+
+                            "No more questions.":
+                                frankwilliams "Good. You're in, then?"
+
+                                menu:
+                                    frankwilliams "Good. You're in, then?"
+
+                                    "I'm in.":
+                                        label .yourein:
+                                            frankwilliams "Alright. Give me your address."
+
+                                            "Frank hands you a notepad. You write your address, and hand it back."
+
+                                            frankwilliams "Good. Your new colleague, Ronny Carter, will pick you up tomorrow morning."
+
+                                            frankwilliams "See you soon."
+
+                                            "Frank stands up and leaves."
+
+                                    "No. I don't think so.":
+                                        frankwilliams "Come on, after all that? Are you sure?"
+
+                                        menu:
+                                            "I'm sure, Frank. I won't do it.":
+                                                frankwilliams "Well... Alright, then."
+
+                                                jump roaduntaken
+
+                                            "Fuck it. I'm in.":
+                                                frankwilliams "Glad to hear it, [firstname]."
+
+                                                jump .yourein
+
+                            "Abduction and false imprisonment seems... Legally dubious.":
+                                frankwilliams "It is. Hence the paycheck."
+
+                                frankwilliams "People have been to court for deprogramming, but never to prison."
+
+                                frankwilliams "The jury knows that we're the good guys."
+
+                                frankwilliams "If something goes wrong on this case, though, don't worry. I'll bail you out."
+
+                                jump .anyquestions
+
+                            "How do you make them 'snap' to reality?":
+                                frankwilliams "You'll see. It's nothing special, once you get the knack for it."
+
+                                frankwilliams "And it's nothing violent either, before you get that in your head."
+
+                                frankwilliams "I talk, mostly."
+
+                                frankwilliams "Sometimes I shout."
+
+                                frankwilliams "Occasionally, I have to say some mean things."
+
+                                frankwilliams "But I don't hit them."
+
+                                frankwilliams "I don't even lay a finger on them during the deprogramming."
+
+                                frankwilliams "Like I said, you'll see."
+
+                                jump .anyquestions
+
+                            "How much are you getting paid for this?":
+                                frankwilliams "For this case?"
+
+                                frankwilliams "$8,000."
+
+                                frankwilliams "More than most people see in six months, I know, but I got expenses."
+
+                                frankwilliams "You know I'm from Washington? I paid for my gas, I'm paying nightly for the motel."
+
+                                frankwilliams "And, if it comes to it, I'm paying my lawyer."
+
+                                frankwilliams "$8,000 is a pretty reasonable sum."
+
+                                jump .anyquestions
+
+    #### Case 1 Scene 4 ####
 
     label case1scene4:
         scene black
 
         "Somewhere in San Francisco, California."
+
+    #### The ending where you simply do not become a deprogrammer ####
+
+    label roaduntaken:
+        scene black
+
+        "After some time, your life goes back to normal."
+
+        "You finish your PhD in 1979, and become a professor of psychology at UCLA."
+
+        "You stop going to the support group in 1980."
