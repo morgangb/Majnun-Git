@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 635: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "How much are you getting paid for this?"
-                                             ^
+File "game/script.rpy", line 1194: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "No. Fuck it. Let's go. I'll get Michael."
+                                              ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Feb  1 03:34:51 2022
+Sat Feb 12 15:47:12 2022

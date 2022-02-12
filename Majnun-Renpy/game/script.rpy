@@ -12,17 +12,25 @@ define answeringmachine = Character("Answering Machine",
 # ACM Characters
 define claragarcia = Character("Clara Garcia",
     who_color = "ffffb0")
+define davidlee = Character("David Lee",
+    who_color = "ffffb0")
 define frankwilliams = Character("Frank Williams",
     who_color = "ffffb0")
 define you = Character("You",
     who_color = "ffffb0")
+
+# New Baptist Characters
+define michaelbloom = Character("Michael Bloom",
+    who_color = "a8734a")
+define newbaptistwoman = Character("New Baptist Woman",
+    who_color = "a8734a")
 
 # The game starts here.
 label start:
 
     # Set default values of variables
 
-    $firstname = "Taylor"
+    $firstname = "Robin"
     $lastname = "Smith"
 
     $cremated = False
@@ -31,7 +39,7 @@ label start:
 
     scene black
 
-    "This game was inspired real people and movements, but is a work of fiction."
+    "This game is a work of fiction inspired by real people, movements."
 
     "Its content may not be suitable for all players."
 
@@ -582,7 +590,7 @@ label start:
 
                                             "Frank hands you a notepad. You write your address, and hand it back."
 
-                                            frankwilliams "Good. Your new colleague, Ronny Carter, will pick you up tomorrow morning."
+                                            frankwilliams "Good. Your new colleague, David Lee, will pick you up tomorrow morning."
 
                                             frankwilliams "See you soon."
 
@@ -652,7 +660,557 @@ label start:
     label case1scene4:
         scene black
 
-        "Somewhere in San Francisco, California."
+        "December 7 1978."
+
+        scene case1scene1
+
+        "Your apartment in Berkeley, California."
+
+        "The doorbell buzzes."
+
+        scene case1scene4
+
+        "A man waits by an SUV."
+
+        show davidlee
+
+        davidlee "Are you [firstname]?"
+
+        menu:
+            davidlee "Are you [firstname]?"
+
+            "Yeah, that's me.":
+                davidlee "Good. Let's go. You're driving."
+
+                jump .insidecar
+
+            "Who's asking?":
+                davidlee "Funny stuff. Get in. You're driving."
+
+                jump .insidecar
+
+        label .insidecar:
+            scene suv
+
+            "You get inside the SUV."
+
+            show davidlee
+
+            davidlee "We're looking for this man."
+
+            scene black
+
+            "David pulls out a photograph."
+
+            show michaelbloom
+
+            davidlee "His name is Michael Bloom."
+
+            davidlee "Use to be a star student at UC Berkeley, until he heard that a man, claiming to be John the Baptist, was in the area."
+
+            davidlee "He got curious and went along. Afterwards, he insisted everyone call him 'Levi'."
+
+            davidlee "He dropped out of college. When his parents tried to step in, he cut them off. Barely speaks to them now."
+
+            davidlee "He doesn't have a life outside of the Church."
+
+            davidlee "It seems like, currently, he solicits for them, here in Berkeley."
+
+            davidlee "You know the area. We'll drive around, find him, and take him to his family in Muir Beach."
+
+            scene suv
+
+            "David puts the photo on the dashboard."
+
+            show davidlee
+
+            davidlee "If you've got questions, ask them. But start driving. I don't want to waste time."
+
+            menu:
+                davidlee "If you've got questions, ask them. But start driving. I don't want to waste time."
+
+                "Hold on. I've got some reservations.":
+                    davidlee "Make this quick, then."
+
+                    label .makethisquickthen:
+                        menu:
+                            davidlee "Make this quick, then."
+
+                            "If Michael was a college student, isn't he an adult?":
+                                davidlee "Yeah. So what?"
+
+                                menu:
+                                    davidlee "Yeah. So what?"
+
+                                    "So, can't he make his own decisions?":
+                                        davidlee "Sure he can, but that's not what he's doing."
+
+                                        davidlee "He's been brainwashed. That's how cults work."
+
+                                        menu:
+                                            davidlee "He's been brainwashed. That's how cults work."
+
+                                            "How?":
+                                                davidlee "'How'?"
+
+                                                davidlee "You go along to a baptism, or you get solicited in the streets, or whatever."
+
+                                                davidlee "They say stuff you already agree with."
+
+                                                davidlee "They say shit like, 'Doesn't it feel like the world could end any time now? The Russians could kill us all in a moment.'"
+
+                                                davidlee "If you respond, they heap praise on you. Say, 'You know, you're smart. You're really brave.'"
+
+                                                davidlee "If you criticize, they go on the offensive. 'Who told you that? Oh, sure, that's what they want you to think.'"
+
+                                                davidlee "After a few hours of talking they have you enamoured."
+
+                                                davidlee "Then they keep hold of you. 'Hey, we're having a get together this weekend. It'd be great if you could come.'"
+
+                                                davidlee "Pretty soon they're like your friends. But they push you to take the next step."
+
+                                                davidlee "'The world could end any time now, and you haven't been properly baptized.'"
+
+                                                davidlee "'You'll go to Hell.'"
+
+                                                davidlee "'Please, we don't want that for you.'"
+
+                                                davidlee "Then they've got you for good."
+
+                                                davidlee "Frank's gonna snap Michael out of it so he can make his own decisions and think for himself again."
+
+                                                davidlee "Satisfied?"
+
+                                                menu:
+                                                    davidlee "Satisfied?"
+
+                                                    "Sure. I'm satisfied.":
+                                                        davidlee "Good."
+
+                                                        jump .makethisquickthen
+
+                                                    "No, I'm not.":
+                                                        jump .leavethen
+
+                                            "Alright. Fair enough.":
+                                                jump .makethisquickthen
+
+                                    "Forget about it.":
+                                        jump .makethisquickthen
+
+                            "I'm still not happy about the legal grayness of this.":
+                                davidlee "Noted."
+
+                                menu:
+                                    davidlee "Noted."
+
+                                    "That's it?":
+                                        davidlee "What more do you want me to say?"
+
+                                        jump .leavethen
+
+                                    "Okay then.":
+                                        jump .makethisquickthen
+
+                            "Do we have a plan?":
+                                davidlee "Like I said: drive around until we find Michael Bloom, then take him to Muir Beach."
+
+                                menu:
+                                    davidlee "Like I said: drive around until we find Michael Bloom, then take him to Muir Beach."
+
+                                    "That seems like a pretty flimsy plan.":
+                                        davidlee "It'll have to do."
+
+                                        davidlee "We can't formulate anything else until we have a better understanding of the situation."
+
+                                        davidlee "You know, where Michael is, how many people are around, if there's any other cultists with him."
+
+                                        davidlee "Once we find him, we'll discuss more."
+
+                                        menu:
+                                            davidlee "Once we find him, we'll discuss more."
+
+                                            "It won't get violent, will it?":
+                                                davidlee "Hopefully not."
+
+                                                menu:
+                                                    davidlee "Hopefully not."
+
+                                                    "'Hopefully'?":
+                                                        davidlee "Like I said, there's lots of factors involved."
+
+                                                        davidlee "But we'll do our best to make sure no one gets hurt, especially not Michael."
+
+                                                        menu:
+                                                            davidlee "But we'll do our best to make sure no one gets hurt, especially not Michael."
+
+                                                            "I'm not sure if 'our best' is good enough.":
+                                                                jump .leavethen
+
+                                                            "Okay.":
+                                                                jump .makethisquickthen
+
+                                                    "Alright then.":
+                                                        jump .makethisquickthen
+
+                                            "Alright, we'll table this discussion then.":
+                                                jump .makethisquickthen
+
+                                    "I guess that's good enough.":
+                                        jump .makethisquickthen
+
+                            "That's it. Let's go.":
+                                jump youstartdriving
+
+                        label .leavethen:
+                            davidlee "I'm not Frank. I won't sit here and give you a talk to convince you to stay."
+
+                            davidlee "If you've got a problem, leave. I don't have time to wait around."
+
+                            menu:
+                                davidlee "If you've got a problem, leave. I don't have time to wait around."
+
+                                "Alright. I'll go.":
+                                    davidlee "See you around."
+
+                                    jump roaduntaken
+
+                                "No, I'm okay. Let's do this job.":
+                                    jump .makethisquickthen
+
+                "Alright, let's go.":
+                    label youstartdriving:
+                        "You start driving."
+
+                        davidlee "If you've got questions, it's better to ask them now, before we find Michael."
+
+                        label .ifyouvegotquestions:
+                            menu:
+                                davidlee "If you've got questions about the job, it's better to ask them now, before we find Michael."
+
+                                "Who's this 'John the Baptist'?":
+                                    davidlee "A man named Georgy Sokolov."
+
+                                    davidlee "Born and raised in New York to White Russians, enlisted to fight in the Korean War."
+
+                                    davidlee "When he came home, he says he had a dream where an angel told him that he was the New Baptist."
+
+                                    davidlee "He believes he's making the way for the Apocalypse and the Second Coming."
+
+                                    davidlee "He goes from place to place baptising people in public, while his family run his church from New York City."
+
+                                    davidlee "Those baptized by him will apparently be 'saved' when World War 3 starts."
+
+                                    menu:
+                                        davidlee "Those baptized by him will apparently be 'saved' when World War 3 starts."
+
+                                        "That's pretty wild.":
+                                            davidlee "I guess it is."
+
+                                            jump .ifyouvegotquestions
+
+                                        "I can see how that interests people.":
+                                            davidlee "Yeah. Me too."
+
+                                            jump .ifyouvegotquestions
+
+                                        "Alright then.":
+                                            jump .ifyouvegotquestions
+
+                                    jump .ifyouvegotquestions
+
+                                "What's with Michael's new name, 'Levi'?":
+                                    davidlee "Have you ever been baptized?"
+
+                                    menu:
+                                        davidlee "Have you ever been baptized?"
+
+                                        "Yes.":
+                                            davidlee "Well, it's like that."
+
+                                            label .baptizedname:
+                                                davidlee "When 'John' baptizes someone, they take a new name."
+
+                                                davidlee "The name has to be found somewhere in the Bible, and can be chosen by the person being baptized or by someone else."
+
+                                                davidlee "Sometimes people manage to get their names legally changed too."
+
+                                                jump .ifyouvegotquestions
+
+                                        "No.":
+                                            davidlee "I guess you wouldn't know then."
+
+                                            jump .baptizedname
+
+                                "I'm out of questions.":
+                                    davidlee "Well, I don't mind silence, but I find it easier to work with people if I know them."
+
+                                    davidlee "Do you believe in God?"
+
+                                    menu:
+                                        davidlee "Do you believe in God?"
+
+                                        "Yes.":
+                                            davidlee "You sound pretty sure."
+
+                                            menu:
+                                                davidlee "You sound pretty sure."
+
+                                                "I am sure.":
+                                                    davidlee "Well, I was sure once."
+
+                                                    jump .davidleebackstory
+
+                                                "I'm not sure.":
+                                                    davidlee "Yeah. Me neither."
+
+                                                    jump .davidleebackstory
+
+                                        "No.":
+                                            davidlee "Did you used to believe in God?"
+
+                                            menu:
+                                                davidlee "Did you used to believe in God?"
+
+                                                "Yeah. At some point I stopped.":
+                                                    davidlee "Yeah. Me too."
+
+                                                    jump .davidleebackstory
+
+                                                "No. I never believed in God.":
+                                                    davidlee "I used to."
+
+                                                    jump .davidleebackstory
+
+                                        "I don't know.":
+                                            davidlee "Yeah. Me neither."
+
+                                            jump .davidleebackstory
+
+                                        "Let's keep this professional.":
+                                            davidlee "I'm not trying to start a fight. But you don't have to say, if you don't want to."
+
+                                            jump .davidleebackstory
+
+                                    label .davidleebackstory:
+                                        davidlee "Have you ever heard of Hong Xiuquan?"
+
+                                        menu:
+                                            davidlee "Have you ever heard of Hong Xiuquan?"
+
+                                            "I've heard of him.":
+                                                jump .hongxiuquan
+
+                                            "No.":
+                                                label .hongxiuquan:
+                                                    davidlee "He lived in the 19th century."
+
+                                                    davidlee "His family were middle class, local officials."
+
+                                                    davidlee "Although they were well off, they could be even more powerful, if one of them could pass the imperial examination."
+
+                                                    davidlee "Xiquan's parents paid for his education, and they paid for him to take the exam on four separate occasions."
+
+                                                    davidlee "He never passed."
+
+                                                    davidlee "After his third attempt, he had a vision, where he visited Heaven."
+
+                                                    davidlee "After his fourth attempt, he consulted Christian pamphlets he had received from a missionary years prior."
+
+                                                    davidlee "Interpreting his vision, he believed that he was the Second Son of God, the younger brother of Jesus Christ."
+
+                                                    davidlee "He took it upon himself to rid the world of 'demon worship'."
+
+                                                    davidlee "Every Confucian and Buddhist book or icon in his house was burned."
+
+                                                    davidlee "His family were his first believers, and they founded the 'Society of God-Worshippers'."
+
+                                                    davidlee "He gained more and more followers."
+
+                                                    davidlee "Perhaps they followed because Imperial China was not a good place for many people to live."
+
+                                                    davidlee "The Government panicked, and sent imperial troops to disperse them."
+
+                                                    davidlee "Hong and his followers defeated them, and beheaded the Manchu commander."
+
+                                                    davidlee "Hong declared 'The Heavenly Kingdom'."
+
+                                                    davidlee "The Taiping Rebellion lasted fourteen years, until the Heavenly Kingdom fell."
+
+                                                    davidlee "Hong Xiuquan had died months before of illness, but his remains were exhumed, cremated, and blasted from a cannon."
+
+                                                    davidlee "His son, Tianguifu, was tortured to death."
+
+                                                    davidlee "The process is called 'Lingchi'."
+
+                                                    davidlee "They cut you apart slowly with a knife, removing body parts, but keeping you alive."
+
+                                                    davidlee "You beg for death, until you eventually bleed out."
+
+                                                    davidlee "Tianguifu was fourteen years old, when they did this to him."
+
+                                                    davidlee "More people died in the Taiping Rebellion than in the whole of the First World War."
+
+                                                    davidlee "My family came here after that."
+
+                                                    davidlee "'John', his family came here after the Russian Revolution."
+
+                                                    davidlee "I think I saw some of myself in him."
+
+                                                    davidlee "I accepted baptism from 'John' when I was fourteen."
+
+                                                    davidlee "Sure, Michael Bloom dropped out of college for 'John', but I dropped out of high school."
+
+                                                    davidlee "It wasn't until Frank deprogrammed me when I was 18 that I finally saw clearly again."
+
+                                                    davidlee "But, by then I had no prospects, no hope, no future outside of the cult."
+
+                                                    davidlee "So, now I help Frank to save people, the same way he saved me."
+
+                                                    davidlee "I know you probably still have some reservations about this, but take it from me."
+
+                                                    davidlee "What we're doing is important."
+
+                                                    davidlee "Even if it feels wrong, we've got to do it--"
+
+                                                    davidlee "Keep driving, but that's  Michael on the sidewalk."
+
+                                                    "You look out of the window."
+
+                                                    scene case1scene5
+
+                                                    show michaelbloom
+
+                                                    "A man matching the photograph speaks with a couple on the street."
+
+                                                    "A woman stands beside him, holding pamphlets."
+
+                                                    scene suv
+
+                                                    show davidlee
+
+                                                    davidlee "Take us around the corner and pull over."
+
+                                                    davidlee "Did you see the girl he was with? Probably another 'New Baptist'."
+
+                                                    davidlee "You get out and go talk to them. Distract them."
+
+                                                    davidlee "I'll take the car, drive around the block, come back."
+
+                                                    davidlee "When I pass by, we'll grab Michael and get out."
+
+                                                    davidlee "Any questions?"
+
+                                                    label .anyquestionsbeforekidnapping:
+                                                        menu:
+                                                            davidlee "Any questions?"
+
+                                                            "How do I distract them?":
+                                                                davidlee "What they're doing is called 'soliciting' in the Church."
+
+                                                                davidlee "There's lots of ways it can go, but their main goal is to get you to give them money."
+
+                                                                davidlee "They'll talk to you about the Church and what they do, and make it seem like a worthy cause."
+
+                                                                davidlee "Not all of it is a lie, but it's definitely not all true."
+
+                                                                davidlee "Show interest. Keep them talking."
+
+                                                                davidlee "Once you've got them going, they won't be able to help themselves."
+
+                                                                davidlee "That's when I'll come back around."
+
+                                                                jump .anyquestionsbeforekidnapping
+
+                                                            "Why drive around the block?":
+                                                                davidlee "Gives you time to get them talking, gives me time to get the car ready."
+
+                                                                davidlee "There's stickers in the back. I'll put one over the number plate."
+
+                                                                davidlee "It's the only thing that distinguishes this car from every other SUV on the roads of California."
+
+                                                                davidlee "A few minutes after grabbing Michael, we'll remove the sticker."
+
+                                                                davidlee "Basically makes us invisible."
+
+                                                                jump .anyquestionsbeforekidnapping
+
+                                                            "How do we 'grab' Michael?":
+                                                                davidlee "In an ideal situation we wouldn't have to - we'd trick him into getting in the car himself."
+
+                                                                davidlee "We don't have that luxury though."
+
+                                                                davidlee "He's a scrawny kid, and I'm a 200 pound man."
+
+                                                                davidlee "I'll grab him, shove him in the car, sit with him in the back."
+
+                                                                davidlee "You'll climb in the front. Start driving."
+
+                                                                davidlee "Don't worry. I've done this before."
+
+                                                                jump .anyquestionsbeforekidnapping
+
+                                                            "Why don't you distract them?":
+                                                                davidlee "I told you, I've done this before."
+
+                                                                davidlee "I don't recognize them, but they might recognize me."
+
+                                                                davidlee "Maybe someone told them about this big Chinese kidnapper, or the Church got hold of pictures of me."
+
+                                                                davidlee "Whatever. They'd bolt if they saw me."
+
+                                                                davidlee "It's not worth the risk."
+
+                                                                jump .anyquestionsbeforekidnapping
+
+                                                            "Okay, no more questions.":
+                                                                davidlee "Okay. Ready?"
+
+                                                                menu:
+                                                                    davidlee "Okay. Ready?"
+
+                                                                    "I don't want to do this.":
+                                                                        davidlee "Then get out and leave. There's no time for doubts right now."
+
+                                                                        menu:
+                                                                            davidlee "Then get out and leave. There's no time for doubts right now."
+
+                                                                            "Nevermind. I can do this.":
+                                                                                davidlee "Damn right you can. Let's go."
+
+                                                                                jump case1scene5
+
+                                                                            "I can't do this. I've got to go.":
+                                                                                davidlee "You're sure?"
+
+                                                                                menu:
+                                                                                    davidlee "You're sure?"
+
+                                                                                    "I'm sure.":
+                                                                                        davidlee "I'll see you around, then."
+
+                                                                                        jump roaduntaken
+
+                                                                                    "No. Fuck it. Let's go. I'll get Michael.":
+                                                                                        davidlee "See you in a few."
+
+                                                                                        jump case1scene5
+
+                                                                    "I'm ready. Let's go.":
+                                                                        jump case1scene5
+
+    label case1scene5:
+        scene black
+
+        "You get out of the car and walk around the corner."
+
+        scene case1scene5
+
+        "You see Michael Bloom down the street, still speaking with the couple."
+
+        "The other 'New Baptist' approaches you."
+
+        newbaptistwoman "Hi! Do you have a moment?"
 
     #### The ending where you simply do not become a deprogrammer ####
 
