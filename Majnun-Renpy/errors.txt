@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1194: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "No. Fuck it. Let's go. I'll get Michael."
-                                              ^
+File "game/script.rpy", line 1235: choice menuitem expects a non-empty block.
+    "Yes, it does.":
+                    ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Sat Feb 12 15:47:12 2022
+Sun Feb 20 18:00:17 2022

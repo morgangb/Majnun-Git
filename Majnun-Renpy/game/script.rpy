@@ -1210,7 +1210,96 @@ label start:
 
         "The other 'New Baptist' approaches you."
 
-        newbaptistwoman "Hi! Do you have a moment?"
+        newbaptistwoman "Hi! Do you have a moment? We're collecting for a Christian charitable organization, and need your help."
+
+        menu:
+            newbaptistwoman "Hi! Do you have a moment? We're collecting for a Christian charitable organization, and need your help."
+
+            "Sure, I have a moment.":
+                newbaptistwoman "Wonderful!"
+
+                "She hands you a pamphlet, entitled 'Fate of the Unlearned'."
+
+                newbaptistwoman "Doesn't it feel like the world could end any day now?"
+
+                menu:
+                    newbaptistwoman "Doesn't it feel like the world could end any day now?"
+
+                    "Yes, it does.":
+                        label .ourmission:
+                            newbaptistwoman "But doesn't the Bible tell us how the world will end?"
+
+                            menu:
+                                newbaptistwoman "But doesn't the Bible tell us how the world will end?"
+
+                                "Yes, it does.":
+                                    "temp"
+
+                                "Not exactly.":
+                                    newbaptistwoman "There can be no other interpretation!"
+
+                                    newbaptistwoman "'There shall not be left here one stone upon another, that shall not be thrown down.'"
+
+                                    newbaptistwoman "Matthew 24:2."
+
+                                "I don't believe in the Bible.":
+                                    "temp"
+
+                    "No, not really.":
+                        label .ofcourseitdoes:
+                            newbaptistwoman "Come on, of course it does!"
+
+                            newbaptistwoman "We've come so close to a Third World War so many times."
+
+                            newbaptistwoman "Korea, Berlin, Cuba, Israel..."
+
+                            newbaptistwoman "Who knows when and where the next crisis will be, and if we'll survive it."
+
+                            jump case1scene5.ourmission
+
+                    "I don't know.":
+                        jump .ofcourseitdoes
+
+                    "I don't see how this connects to your organization.":
+                        jump .ourmission
+
+            "I actually wanted to speak to your friend.":
+                newbaptistwoman "Oh, do you know Levi?"
+
+                menu:
+                    newbaptistwoman "Oh, do you know Levi?"
+
+                    "I thought his name was Michael.":
+                        newbaptistwoman "Perhaps it once was, but he's Levi now."
+
+                        newbaptistwoman "Let me get him."
+
+                        jump .letmegetleviforyou
+
+                    "Not properly, but... I think I might have spoken to him before.":
+                        newbaptistwoman "Alright, let me get him for you!"
+
+                        jump .letmegetleviforyou
+
+                    "He's a friend of a friend, I guess.":
+                        newbaptistwoman "I'll get him for you, then!"
+
+                        jump .letmegetleviforyou
+
+        label .letmegetleviforyou:
+            "The woman goes to 'Levi' and takes over speaking with the couple."
+
+            "'Levi' approaches you."
+
+            michaelbloom "Hi there... Do I know you?"
+
+            menu:
+                michaelbloom "Hi there... Do I know you?"
+
+                "We were in Berkeley together. We never spoke though. I'm [firstname].":
+                    michaelbloom "Oh wow, that's crazy!"
+
+                    michaelbloom "My friend and I, we're collecting for a Christian charitable organization."
 
     #### The ending where you simply do not become a deprogrammer ####
 
