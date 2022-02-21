@@ -35,6 +35,8 @@ label start:
 
     $cremated = False
 
+    $distracted = False
+
     #### A debug menu for testing ####
 
     scene black
@@ -1199,6 +1201,8 @@ label start:
                                                                     "I'm ready. Let's go.":
                                                                         jump case1scene5
 
+    #### Case 1 Scene 5 ####
+
     label case1scene5:
         scene black
 
@@ -1227,13 +1231,60 @@ label start:
 
                     "Yes, it does.":
                         label .ourmission:
-                            newbaptistwoman "But doesn't the Bible tell us how the world will end?"
+                            newbaptistwoman "And the Bible tells us how the world will end, doesn't it?"
 
                             menu:
-                                newbaptistwoman "But doesn't the Bible tell us how the world will end?"
+                                newbaptistwoman "And the Bible tells us how the world will end, doesn't it?"
 
                                 "Yes, it does.":
-                                    "temp"
+                                    label .takenup:
+                                        newbaptistwoman "And won't the believers be saved from tribulation?"
+
+                                        menu:
+                                            newbaptistwoman "And won't the believers be saved from tribulation?"
+
+                                            "Yes, they will.":
+                                                label .proselytize:
+                                                    newbaptistwoman "So, isn't it important to make sure as many people believe as possible so that they are spared?"
+
+                                                    menu:
+                                                        newbaptistwoman "So, isn't it important to make sure as many people believe as possible so that they are spared?"
+
+                                                        "Yes, it is important.":
+                                                            newbaptistwoman "Among other things, what we provide is a service called 'New Baptism'."
+
+                                                            newbaptistwoman "Here, I think this might interest you."
+
+                                                            "She hands you another pamphlet, this one entitled 'New Baptism'."
+
+                                                            newbaptistwoman "For many people, it is a reaffirmation of faith in God before Christ's return."
+
+                                                            newbaptistwoman "And for many people who have not been baptized before, it is a chance to accept God before it is too late."
+
+                                                            newbaptistwoman "Would you perhaps be interested in donating?"
+
+                                                            newbaptistwoman "Or even coming along to one of our baptisms?"
+
+                                                            jump case1scene6
+
+                                                        "No, it's not.":
+                                                            newbaptistwoman "'Go your ways: behold, I send you forth as lambs among wolves.'"
+
+                                                            newbaptistwoman "Luke 10:3."
+
+                                                            jump case1scene6
+
+                                            "No, they won't.":
+                                                newbaptistwoman "The Bible says so!"
+
+                                                newbaptistwoman "'Then we which are alive and remain shall be caught up together with them in the clouds, to meet the Lord in the air: and so shall we ever be with the Lord.'"
+
+                                                newbaptistwoman "1 Thessalonian 4:17."
+
+                                                jump .proselytize
+
+                                            "I don't know.":
+                                                jump .proselytize
 
                                 "Not exactly.":
                                     newbaptistwoman "There can be no other interpretation!"
@@ -1242,8 +1293,159 @@ label start:
 
                                     newbaptistwoman "Matthew 24:2."
 
+                                    jump .takenup
+
                                 "I don't believe in the Bible.":
-                                    "temp"
+                                    newbaptistwoman "What do you believe in, then?"
+
+                                    menu:
+                                        newbaptistwoman "What do you believe in, then?"
+
+                                        "I believe in other Books.":
+                                            newbaptistwoman "'For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled.'"
+
+                                            newbaptistwoman "Matthew 5:18."
+
+                                            newbaptistwoman "There is no Book but the Bible!"
+
+                                            menu:
+                                                newbaptistwoman "There is no Book but the Bible!"
+
+                                                "The Quran came after it.":
+                                                    newbaptistwoman "How could the Quran have been inspired by God when Heaven and Earth had not yet passed?"
+
+                                                    menu:
+                                                        newbaptistwoman "How could the Quran have been inspired by God when Heaven and Earth had not yet passed?"
+
+                                                        "Is it possible that statement was a metaphor?":
+                                                            newbaptistwoman "The scriptures are clear as day."
+
+                                                            # End
+
+                                                        "Do you refute the Prophet of Islam as others have refuted Christ?":
+                                                            newbaptistwoman "The two are incomparable."
+
+                                                            # End
+
+                                                        "Perhaps the Bible erred.":
+                                                            newbaptistwoman "The Bible is inerrant."
+
+                                                            # End
+
+                                                "The Tanakh came before it.":
+                                                    newbaptistwoman "The Old Testament? Of course."
+
+                                                    newbaptistwoman "It established everything that made Jesus Christ the Messiah."
+
+                                                    newbaptistwoman "Wait, are you Jewish?"
+
+                                                    menu:
+                                                        newbaptistwoman "Wait, are you Jewish?"
+
+                                                        "Yes, I'm Jewish.":
+                                                            newbaptistwoman "'Then answered all the people, and said, His blood be on us, and on our children.'"
+
+                                                            newbaptistwoman "Matthew 27:25."
+
+                                                            newbaptistwoman "Then you know that you must accept Christ as the Messiah, or you will be cursed?"
+
+                                                            #End
+
+                                                        "No, I'm not Jewish.":
+                                                            newbaptistwoman "Then you know that Jesus Christ is the Messiah and that He will return?"
+
+                                                            #End
+
+                                                        "I'd rather not say.":
+                                                            jump case1scene6
+
+                                                "But what books constitute that Book? What of the Books of Esdras and the Maccabees and the Wsidom of Solomon?":
+                                                    newbaptistwoman "'All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness.'"
+
+                                                    newbaptistwoman "2 Timothy 3:16."
+
+                                                    newbaptistwoman "Do you mean to say you are a Gnostic?"
+
+                                                    menu:
+                                                        newbaptistwoman "Do you mean to say you are a Gnostic?"
+
+                                                        "Yes, I am.":
+                                                            newbaptistwoman "There are no Gnostics."
+
+                                                            #End
+
+                                                        "Gnostic, no. Agnostic, yes.":
+                                                            newbaptistwoman "There can be no room for doubt when we are so close to the end."
+
+                                                            #End
+
+                                                "There are many other Books: the Tipitaka, Mahābhārata, the Guru Granth Sahib":
+                                                    newbaptistwoman "Those were not inspired by God!"
+
+                                                    newbaptistwoman "The Pentateuch was written by Moses, the Gospels were written by the disciples."
+
+                                                    jump case1scene6
+
+                                        "I believe in mind, body and spirit.":
+                                            newbaptistwoman "But not God?"
+
+                                            newbaptistwoman "Without God you would not have a mind, body, or spirit!"
+
+                                            menu:
+                                                newbaptistwoman "Without God you would not have a mind, body, or spirit!"
+
+                                                "Perhaps we just came into being, through the Universe.":
+                                                    newbaptistwoman "But how did the Universe come into being?"
+
+                                                    menu:
+                                                        newbaptistwoman "But how did the Universe come into being?"
+
+                                                        "By itself.":
+                                                            newbaptistwoman "And how is that different from God?"
+
+                                                            newbaptistwoman "Aren't you just calling Him by another name?"
+
+                                                            jump case1scene6
+
+                                                        "The Big Bang.":
+                                                            newbaptistwoman "And how did the material for the Big Bang get there in the first place?"
+
+                                                            newbaptistwoman "Did it come from nowhere?"
+
+                                                            jump case1scene6
+
+                                                        "It's impossible to answer questions about the beginning of time.":
+                                                            newbaptistwoman "But it's not impossible when we have the word of God!"
+
+                                                            jump case1scene6
+
+                                                "What about gods, plural?":
+                                                    newbaptistwoman "We have no time for new age enthusiasms."
+
+                                                    newbaptistwoman "I made it clear we're a Christian organization."
+
+                                                    newbaptistwoman "Have a good day."
+
+                                                    jump case1scene6
+
+                                        "I believe in people.":
+                                            newbaptistwoman "But people are tainted by sin."
+
+                                            menu:
+                                                newbaptistwoman "But people are tainted by sin."
+
+                                                "I don't think all people are tainted.":
+                                                    newbaptistwoman "'Behold, I was shapen in iniquity, and in sin did my mother conceive me.'"
+
+                                                    newbaptistwoman "Psalms 51:5."
+
+                                                "There is no such thing as sin.":
+                                                    newbaptistwoman "I beg to differ."
+
+                                        "I don't believe in anything, really.":
+                                            newbaptistwoman "Okay then. Thank you for your time. Have a good day."
+
+                                            jump case1scene6
 
                     "No, not really.":
                         label .ofcourseitdoes:
@@ -1300,6 +1502,30 @@ label start:
                     michaelbloom "Oh wow, that's crazy!"
 
                     michaelbloom "My friend and I, we're collecting for a Christian charitable organization."
+
+    label case1scene6:
+        "You see the SUV approach."
+
+        "David quickly gets out and bundles Michael into the back seat."
+
+        "You get in the front."
+
+        scene suv
+
+        show davidlee at left
+
+        show michaelbloom at right
+
+        if not distracted:
+            "As you pull away, the woman yells."
+
+            "You hear a loud scraping sound along the side of the car."
+
+            davidlee "Fuck, she keyed the car."
+
+            davidlee "That'll make our lives harder."
+
+        michaelbloom "Who the fuck are you people?"
 
     #### The ending where you simply do not become a deprogrammer ####
 
