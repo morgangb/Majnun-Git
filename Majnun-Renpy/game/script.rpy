@@ -48,8 +48,8 @@ label start:
     menu:
         "Select scene."
 
-        "Case 1, Scene 1":
-            jump case1scene1
+        "Case 1, Scene 9":
+            jump case1scene9
 
         "Case 1, Scene 2":
             jump case1scene2
@@ -1526,6 +1526,108 @@ label start:
             davidlee "That'll make our lives harder."
 
         michaelbloom "Who the fuck are you people?"
+
+    label case1scene9:
+        scene black
+
+        show michaelbloom at right
+
+        show frankwilliams at left
+
+        "As you enter the room, you see Frank stood over Michael."
+
+        "Michael looks dishevelled, and his eyes are red."
+
+        "Frank is breathing hard. When he speaks, his voice is hoarse."
+
+        frankwilliams "Good, you're here."
+
+        menu:
+            frankwilliams "Good, you're here."
+
+            "What do you need?":
+                label .deprogramming:
+                    frankwilliams "You're taking over from me."
+
+                    frankwilliams "Michael here is almost done with the Church for good."
+
+                    michaelbloom "No, I'm not."
+
+                    frankwilliams "Yes, you are. Shut the fuck up before I gag you."
+
+                    menu:
+                        frankwilliams "Yes, you are. Shut the fuck up before I gag you."
+
+                        "Is that really necessary, Frank?":
+                            frankwilliams "Not yet it isn't."
+
+                            jump .whatdoido
+
+                        "What do I do?":
+                            label .whatdoido:
+                                frankwilliams "Keep the pressure on."
+
+                                frankwilliams "Expose Georgy for what he is."
+
+                                frankwilliams "Expose the Church for what it is."
+
+                                frankwilliams "Expose him for what he is."
+
+                                frankwilliams "Then he'll snap."
+
+                                frankwilliams "I'll be here watching. Now go ahead."
+
+                                label michaelbloomroot:
+                                    michaelbloom "... Well?"
+
+                                    "So, why did you join the Church?":
+                                        michaelbloom "We're almost in the end times. I hope to be saved."
+
+                                        "What do you mean by 'almost'?":
+                                            michaelbloom "The Jews are gathered in Israel."
+
+                                            michaelbloom "There is conflict on the Temple Mount."
+
+                                            michaelbloom "And every day we risk destruction."
+
+                                            menu:
+                                                michaelbloom "And every day we risk destruction."
+
+                                                "What do you mean, 'the Jews are gathered in Israel?'":
+                                                    michaelbloom "I think that's pretty obvious, right?"
+
+                                                    michaelbloom "Ezekiel 47."
+
+                                                    michaelbloom "For the first time in nearly two millenia they are back in the Holy Land - this is a condition of the End Times."
+
+                                                    menu:
+                                                        michaelbloom "For the first time in nearly two millenia they are back in the Holy Land - this is a condition of the End Times."
+
+                                                        "Why, so they can be converted?":
+                                                            michaelbloom "Yes! When Christ returns, then they'll all see."
+
+                                                "What do you mean, 'there is conflict on the Temple Mount'?":
+                                                    michaelbloom "Matthew 24."
+
+                                                    michaelbloom "Jesus Christ predicted the destruction of Herod's Temple."
+
+                                                    michaelbloom "Ezekiel 40."
+
+                                                    michaelbloom "Measurements have already been given for a new Temple."
+
+                                                    michaelbloom "In His Kingdom, Christ will build that Third Temple."
+
+                                        "What do you mean by 'end times'?":
+
+            "Are you okay?":
+                frankwilliams "I'll be fine once I have some water."
+
+                jump .deprogramming
+
+            "Is he okay?":
+                frankwilliams "He's never been better."
+
+                jump .deprogramming
 
     #### The ending where you simply do not become a deprogrammer ####
 
