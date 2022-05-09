@@ -37,6 +37,8 @@ label start:
 
     $distracted = False
 
+    $will = 3.0
+
     #### A debug menu for testing ####
 
     scene black
@@ -51,8 +53,8 @@ label start:
         "Case 1, Scene 9":
             jump case1scene9
 
-        "Case 1, Scene 2":
-            jump case1scene2
+        "Case 1, Scene 7":
+            jump case1scene7
 
         "Case 1, Scene 3":
             jump case1scene3
@@ -1558,9 +1560,13 @@ label start:
     #### Case 1 Scene 7 ####
 
     label case1scene7:
+        scene black
+
+        "An hour passes."
+
+        scene case1scene7
+
         "Muir Beach, California."
-
-
 
     #### Case 1 Scene 9 ####
 
@@ -1629,7 +1635,90 @@ label start:
                                                 michaelbloom "What about John?"
 
                                                 "Have you ever actually spoken to him?":
-                                                    michaelbloom "fucking shitarse wank"
+                                                    michaelbloom "Yes, we spoke when he baptized me."
+
+                                                    menu:
+                                                        michaelbloom "Yes, we spoke when he baptized me."
+
+                                                        "What did he say?":
+                                                            michaelbloom "He said, 'I baptize you, Levi, in the name of the Father, the Son, and the Holy Spirit...'"
+
+                                                            michaelbloom "'... by God's Grace, your sins are forgiven, and you are saved.'"
+
+                                                            michaelbloom "Then he submerged me, and I was born again."
+
+                                                            michaelbloom "He embraced me, in the cold water of that creek in the Diablo mountains."
+
+                                                            michaelbloom "Funny name, given the circumstances."
+
+                                                            menu:
+                                                                michaelbloom "Funny name, given the circumstances."
+
+                                                                "Was that all he said? Seems rather abrupt.":
+                                                                    michaelbloom "That was all; there were others to baptize."
+
+                                                                    michaelbloom "'Dear children, let us not love with words or speech but with actions and in truth.'"
+
+                                                                    michaelbloom "1 John 3:18."
+
+                                                                    michaelbloom "And what greater act of love is there, than indemnification?"
+
+                                                                    menu:
+                                                                        michaelbloom "And what greater act of love is there, than indemnification?"
+
+                                                                        "Georgy doesn't seem to do much apart from dunking people in water.":
+                                                                            michaelbloom "What would you rather he do? Run for President?"
+
+                                                                            michaelbloom "He's saved more souls than anyone that's ever sat in the White House."
+
+                                                                "And you didn't say anything?":
+                                                                    michaelbloom "No. What could I possibly say before him?"
+
+                                                                    label whatcouldipossiblysay:
+                                                                        menu:
+                                                                            michaelbloom "No. What could I possibly say before him?"
+
+                                                                            "What about Matthew 3:6? Confession of sins?":
+                                                                                michaelbloom "I confessed to one of the Church members."
+
+                                                                                menu:
+                                                                                    michaelbloom "I confessed to one of the Church members."
+
+                                                                                    "So how could Georgy forgive you, if he did not even know your sins?":
+                                                                                        michaelbloom "He did. He forgave me."
+
+                                                                                        michaelbloom "All that is needed for righteousness is faith in Christ. Romans 3:22."
+
+                                                                                        menu:
+                                                                                            michaelbloom "All that is needed for righteousness is faith in Christ. Romans 3:22."
+
+                                                                                            "If that is all that's needed, what good is there in baptism?":
+                                                                                                michaelbloom "It is both. Both are needed."
+
+                                                                                                menu:
+                                                                                                    michaelbloom "It is both. Both are needed."
+
+                                                                                                    "But you did not confess to Georgy.":
+                                                                                                        michaelbloom "No, I didn't."
+
+                                                                                                        michaelbloom "You're talking in circles."
+
+                                                                                                        michaelbloom "I believed. I confessed. I was baptized. That's it."
+
+                                                                                                        $will -= 0.5
+
+                                                                                                        jump michaelbloomroot
+
+                                                                            "What about Matthew 19:14? Believer's baptism?":
+                                                                                michaelbloom "I believe. I believed."
+
+                                                                                michaelbloom "I was an adult then, and I am an adult now."
+
+                                                                                michaelbloom "I chose to be baptized."
+
+                                                                                $will += 1
+
+                                                                                jump whatcouldipossiblysay
 
                                                 "Have you considered that he might be delusional?":
                                                     michaelbloom "fucking shitarse wank"

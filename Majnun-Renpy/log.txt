@@ -1,4 +1,4 @@
-Mon May  9 19:47:33 2022
+Mon May  9 23:33:51 2022
 Linux-5.13.0-40-generic-x86_64-with-debian-bullseye-sid
 Ren'Py 7.4.11.2266
  
@@ -6,13 +6,13 @@ Ren'Py 7.4.11.2266
 Bootstrap to the start of init.init took 0.09s
 Early init took 0.00s
 Loader init took 0.01s
-Loading error handling took 0.16s
-Loading script took 0.38s
-Loading save slot metadata. took 0.46s
+Loading error handling took 0.02s
+Loading script took 0.09s
+Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.16s
-Loading analysis data took 0.03s
+Running init code took 0.04s
+Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Dump and make backups. took 0.06s
@@ -24,73 +24,9 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.04s
 Build styles took 0.00s
-Load screen analysis took 0.06s
+Load screen analysis took 0.02s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
 Prepare screens took 0.07s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.18s
-
-Initializing gl2 renderer:
-primary display bounds: (1360, 0, 1680, 1050)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: 'nouveau'
-Renderer: 'NV124'
-Version: '4.3 (Compatibility Profile) Mesa 21.2.6'
-Display Info: None
-Screen sizes: virtual=(320, 180) physical=(1680, 1050) drawable=(1680, 1050)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(320, 256) drawable=(320, 256)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(320, 257) drawable=(320, 257)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(320, 259) drawable=(320, 259)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(323, 266) drawable=(323, 266)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(440, 335) drawable=(440, 335)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(542, 388) drawable=(542, 388)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(652, 442) drawable=(652, 442)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(767, 483) drawable=(767, 483)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(825, 497) drawable=(825, 497)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(849, 504) drawable=(849, 504)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1009, 586) drawable=(1009, 586)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1032, 614) drawable=(1032, 614)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1044, 624) drawable=(1044, 624)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1061, 641) drawable=(1061, 641)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1065, 651) drawable=(1065, 651)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1100, 737) drawable=(1100, 737)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1108, 768) drawable=(1108, 768)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1109, 791) drawable=(1109, 791)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1109, 826) drawable=(1109, 826)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1109, 825) drawable=(1109, 825)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1119, 748) drawable=(1119, 748)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1123, 734) drawable=(1123, 734)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1127, 726) drawable=(1127, 726)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1129, 726) drawable=(1129, 726)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(320, 180) physical=(1130, 726) drawable=(1130, 726)
-Maximum texture size: 4096x4096
