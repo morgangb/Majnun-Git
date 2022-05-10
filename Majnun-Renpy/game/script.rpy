@@ -8,6 +8,10 @@ define attendant = Character("Attendant",
     who_color = "#ffffff")
 define answeringmachine = Character("Answering Machine",
     who_color = "#ffffff")
+define mrbloom = Character("Mr. Bloom",
+    who_color = "#ffffff")
+define mrsbloom = Character("Mrs. Bloom",
+    who_color = "#ffffff")
 
 # ACM Characters
 define claragarcia = Character("Clara Garcia",
@@ -43,7 +47,7 @@ label start:
 
     scene black
 
-    "This game is a work of fiction inspired by real people, movements."
+    "This game is a work of fiction inspired by real people, movements, and events."
 
     "Its content may not be suitable for all players."
 
@@ -1557,6 +1561,8 @@ label start:
 
         michaelbloom "If you think you'll break me, you've got another thing coming."
 
+        jump case1scene7
+
     #### Case 1 Scene 7 ####
 
     label case1scene7:
@@ -1567,6 +1573,66 @@ label start:
         scene case1scene7
 
         "Muir Beach, California."
+
+        show davidlee at left
+
+        show michaelbloom at right
+
+        davidlee "We're here. [firstname], stay behind Michael as we walk him in, and keep hold of him too."
+
+        michaelbloom "What if I scream?"
+
+        davidlee "You're welcome to. No one will care."
+
+        "You get out of the car and walk Michael inside."
+
+        scene black
+
+        jump case1scene8
+
+    #### Case 1 Scene 8 ####
+
+    label case1scene8:
+        scene case1scene8
+
+        show michaelbloom at center
+
+        show davidlee at left
+
+        show frankwilliams at right
+
+        "As you enter, a man and a woman watch from the other side of a kitchen as Frank greets you."
+
+        frankwilliams "Good job you two. I got this from here."
+
+        "He takes Michael from you and walks him into another room."
+
+        mrsbloom "You must be David and [firstname]... Can I get you some coffee or something?"
+
+        davidlee "Thank you Mrs. Bloom, but if it's the same to you I could do with some sleep. Mind if I take the couch?"
+
+        mrsbloom "Sure, go ahead."
+
+        "David lays down on the couch and soon begins to snore faintly."
+
+        mrsbloom "How about you? Coffee?"
+
+        menu:
+            mrsbloom "How about you? Coffee?"
+
+            "Yes, please.":
+                "Soon there's a hot mug in front of you."
+
+            "No, thanks.":
+                "You sit down at the counter."
+
+        mrsbloom "Sorry, there's not really an etiquette for this kind of thing, is there?"
+
+        "Frank's voice booms from upstairs."
+
+        frankwilliams "[firstname]! Get up here!"
+
+        jump case1scene9
 
     #### Case 1 Scene 9 ####
 
@@ -1610,8 +1676,6 @@ label start:
                             label .whatdoido:
                                 frankwilliams "Keep the pressure on."
 
-                                frankwilliams "Expose Georgy for what he is."
-
                                 frankwilliams "Expose the Church for what it is."
 
                                 frankwilliams "Expose him for what he is."
@@ -1622,447 +1686,241 @@ label start:
 
                                 hide frankwilliams
 
+                                michaelbloom "Well...?"
+
                                 label michaelbloomroot:
-                                    michaelbloom "... Well?"
+                                    if will > 0:
+                                        menu:
+                                            michaelbloom "Well...?"
 
-                                    menu:
-                                        michaelbloom "... Well?"
-
-                                        "About Georgy...":
-                                            michaelbloom "What about John?"
-
-                                            menu:
+                                            "About Georgy...":
                                                 michaelbloom "What about John?"
 
-                                                "Have you ever actually spoken to him?":
-                                                    michaelbloom "Yes, we spoke when he baptized me."
+                                                menu:
+                                                    michaelbloom "What about John?"
 
-                                                    menu:
-                                                        michaelbloom "Yes, we spoke when he baptized me."
+                                                    "He's delusional.":
+                                                        michaelbloom "Would you have said the same of the first John, almost 2000 years ago?"
 
-                                                        "What did he say?":
-                                                            michaelbloom "He said, 'I baptize you, Levi, in the name of the Father, the Son, and the Holy Spirit...'"
+                                                        menu:
+                                                            michaelbloom "Would you have said the same of the first John, almost 2000 years ago?"
 
-                                                            michaelbloom "'... by God's Grace, your sins are forgiven, and you are saved.'"
+                                                            "Yes. He was delusional too.":
+                                                                michaelbloom "Not even a Christian, huh? Do you even believe in God?"
 
-                                                            michaelbloom "Then he submerged me, and I was born again."
+                                                                menu:
+                                                                    michaelbloom "Not even a Christian, huh? Do you even believe in God?"
 
-                                                            michaelbloom "He embraced me, in the cold water of that creek in the Diablo mountains."
+                                                                    "Yes, I do.":
+                                                                        michaelbloom "Ah, so you're a Jew, then."
 
-                                                            michaelbloom "Funny name, given the circumstances."
-
-                                                            menu:
-                                                                michaelbloom "Funny name, given the circumstances."
-
-                                                                "Was that all he said? Seems rather abrupt.":
-                                                                    michaelbloom "That was all; there were others to baptize."
-
-                                                                    michaelbloom "'Dear children, let us not love with words or speech but with actions and in truth.'"
-
-                                                                    michaelbloom "1 John 3:18."
-
-                                                                    michaelbloom "And what greater act of love is there, than indemnification?"
-
-                                                                    menu:
-                                                                        michaelbloom "And what greater act of love is there, than indemnification?"
-
-                                                                        "Georgy doesn't seem to do much apart from dunking people in water.":
-                                                                            michaelbloom "What would you rather he do? Run for President?"
-
-                                                                            michaelbloom "He's saved more souls than anyone that's ever sat in the White House."
-
-                                                                "And you didn't say anything?":
-                                                                    michaelbloom "No. What could I possibly say before him?"
-
-                                                                    label whatcouldipossiblysay:
                                                                         menu:
-                                                                            michaelbloom "No. What could I possibly say before him?"
+                                                                            michaelbloom "Ah, so you're a Jew, then."
 
-                                                                            "What about Matthew 3:6? Confession of sins?":
-                                                                                michaelbloom "I confessed to one of the Church members."
+                                                                            "Yes, I am.":
+                                                                                michaelbloom "Then I'm not the delusional one, you are. And my parents are."
 
-                                                                                menu:
-                                                                                    michaelbloom "I confessed to one of the Church members."
+                                                                                michaelbloom "The Jews waited thousands of years for a Messiah, and when He came they denied Him!"
 
-                                                                                    "So how could Georgy forgive you, if he did not even know your sins?":
-                                                                                        michaelbloom "He did. He forgave me."
+                                                                                michaelbloom "They still wait today."
 
-                                                                                        michaelbloom "All that is needed for righteousness is faith in Christ. Romans 3:22."
+                                                                                label theystillwaittoday:
+                                                                                    menu:
+                                                                                        michaelbloom "They still wait today."
 
-                                                                                        menu:
-                                                                                            michaelbloom "All that is needed for righteousness is faith in Christ. Romans 3:22."
+                                                                                        "Jesus Christ was not the Messiah.":
+                                                                                            michaelbloom "Why not?"
 
-                                                                                            "If that is all that's needed, what good is there in baptism?":
-                                                                                                michaelbloom "It is both. Both are needed."
+                                                                                            menu:
+                                                                                                michaelbloom "Why not?"
 
-                                                                                                menu:
-                                                                                                    michaelbloom "It is both. Both are needed."
+                                                                                                "He did not build the Third Temple - Ezekiel 37:27.":
+                                                                                                    michaelbloom "Why do you insist that the Temple must be a building?"
 
-                                                                                                    "But you did not confess to Georgy.":
-                                                                                                        michaelbloom "No, I didn't."
+                                                                                                    michaelbloom "'My dwelling place will be with them...'"
 
-                                                                                                        michaelbloom "You're talking in circles."
+                                                                                                    michaelbloom "Is that not Christ, the Son, going among the people of Israel?"
 
-                                                                                                        michaelbloom "I believed. I confessed. I was baptized. That's it."
+                                                                                                    label quitit:
+                                                                                                        show frankwilliams at right
 
-                                                                                                        $will -= 0.5
+                                                                                                        frankwilliams "[firstname], cut it out."
+
+                                                                                                        frankwilliams "There are millions of Christians across the world who believe in God and Christ, myself included."
+
+                                                                                                        frankwilliams "I respect your beliefs, but you cannot shake someone out of believing in God or Christ."
+
+                                                                                                        frankwilliams "That's not the issue with what Michael believes."
+
+                                                                                                        frankwilliams "Try something else."
 
                                                                                                         jump michaelbloomroot
 
-                                                                            "What about Matthew 19:14? Believer's baptism?":
-                                                                                michaelbloom "I believe. I believed."
+                                                                                                "He did not gather all the Jews back to Israel - Isaiah 43.":
+                                                                                                    michaelbloom "That prophecy was retroactively imposed upon Isaiah, after the Coming of Christ."
 
-                                                                                michaelbloom "I was an adult then, and I am an adult now."
+                                                                                                    michaelbloom "When Christ came, the Jews had already lived in Israel for centuries, although they had been subjugated by the Romans."
 
-                                                                                michaelbloom "I chose to be baptized."
+                                                                                                    michaelbloom "And where are most Jews today? Israel, once again."
 
-                                                                                $will += 1
+                                                                                                    jump quitit
 
-                                                                                jump whatcouldipossiblysay
+                                                                                                "He did not create an age of peace - Isaiah 2:4.":
+                                                                                                    michaelbloom "How many Christian nations have had peace and co-operation in times past?"
 
-                                                "Have you considered that he might be delusional?":
-                                                    michaelbloom "fucking shitarse wank"
+                                                                                                    michaelbloom "Many more will there be in the future, when Christ returns and unites all under His banner!"
 
-                                                "He's conning you for money.":
-                                                    michaelbloom "Yeah? Then how come I've given the Church less than I gave to Berkeley?"
+                                                                                                    jump quitit
 
-                                                    menu:
-                                                        michaelbloom "Yeah? Then how come I've given the Church less than I gave to Berkeley?"
+                                                                                        "And you still await the Second Coming, after thousands of years.":
+                                                                                            michaelbloom "Yes, we do, and He will be here soon."
 
-                                                        "How much have you given the Church, roughly?":
-                                                            michaelbloom "I don't know. $10,000?"
+                                                                                            label hewillbeheresoon:
+                                                                                                menu:
+                                                                                                    michaelbloom "Yes, we do, and He will be here soon."
 
-                                                        "Was that your money, or your parents'?":
-                                                            michaelbloom "Mine. Mostly. Does it matter?"
+                                                                                                    "What makes you think that Georgy's prediction is any different from the hundreds of others?":
+                                                                                                        michaelbloom "Because John received his mission from God."
 
-                                                        "What about your time?":
-                                                            michaelbloom "What, because I volunteer I'm brainwashed? Is that it?"
+                                                                                                        jump toldjohn
 
-                                                            menu:
-                                                                michaelbloom "What, because I volunteer I'm brainwashed? Is that it?"
+                                                                                                    "Matthew 24:23. 'At that time if anyone says to you, 'Look, here is the Messiah!' or, 'There he is!' do not believe it.'":
+                                                                                                        michaelbloom "But John does not tell us, 'Here is the Messiah!'"
 
-                                                                "Do you 'volunteer' besides soliciting?":
-                                                                    michaelbloom "shitarse"
+                                                                                                        michaelbloom "He only tells us that He approaches, just as the first John did in the first Coming of Christ."
 
-                                                                "Do you volunteer with any other organizations?":
-                                                                    michaelbloom "shitarse"
+                                                                                                        jump hewillbeheresoon
 
-                                                                "How many hours a week do you spend 'volunteering'? As a rough estimate.":
-                                                                    michaelbloom "I don't know. Forty hours, I guess."
+                                                                                                    "Matthew 24:36. 'But about that day or hour no one knows.'":
+                                                                                                        michaelbloom "You stopped short on that verse."
 
-                                                                    menu:
-                                                                        michaelbloom "I don't know. Forty hours, I guess."
+                                                                                                        michaelbloom "'But about that day or hour no one knows, not even the angels in heaven, nor the Son, but only the Father.'"
 
-                                                                        "How much can it vary by?":
-                                                                            michaelbloom "shitarse"
-
-                                                                        "Well, that's basically a full time job.":
-                                                                            michaelbloom "shitarse"
-
-                                                                        "And they don't pay you for that?":
-                                                                            michaelbloom "I get room and board with the Church. I don't need anything else."
-
-                                                                            menu:
-                                                                                michaelbloom "I get room and board with the Church. I don't need anything else."
-
-                                                                                "What do you do for fun?":
-                                                                                    michaelbloom "shitarse"
-
-                                                                                "What's the food like?":
-                                                                                    michaelbloom "shitarse"
-
-                                                                                "What's the room like?":
-                                                                                    michaelbloom "It's sufficient. Two people to a bunk. I don't know how many bunks to a room."
-
-                                                                                    menu:
-                                                                                        michaelbloom "It's sufficient. Two people to a bunk. I don't know how many bunks to a room."
-
-                                                                                        "Sounds more like a barracks than a bedroom.":
-                                                                                            michaelbloom "shitarse"
-
-                                                                                        "You volunteer 40 hours a week and don't get your own bed?":
-                                                                                            michaelbloom "shitarse"
-
-                                                                                        "Who do you bunk with?":
-                                                                                            michaelbloom "A guy called Simeon. Does it matter?"
-
-                                                                                            menu:
-                                                                                                michaelbloom "A guy called Simeon. Does it matter?"
-
-                                                                                                "Do you get to choose your bunkmate?":
-                                                                                                    michaelbloom "No."
-
-                                                                                                "Do you get on with Simeon?":
-                                                                                                    michaelbloom "Yeah? I guess?"
-
-                                                                                                "Not that woman you were soliciting with?":
-                                                                                                    michaelbloom "No, men and women sleep in different rooms."
-
-                                                                                                    menu:
-                                                                                                        michaelbloom "No, men and women sleep in different rooms."
-
-                                                                                                        "Why?":
-                                                                                                            michaelbloom "So the men aren't tempted and the women are safe. Isn't that obvious?"
+                                                                                                        label toldjohn:
+                                                                                                            michaelbloom "And He has told John."
 
                                                                                                             menu:
-                                                                                                                michaelbloom "So the men aren't tempted and the women are safe. Isn't that obvious?"
+                                                                                                                michaelbloom "And He has told John."
 
-                                                                                                                "Don't you do some things together?":
-                                                                                                                    michaelbloom "No."
-
-                                                                                                                "What about married couples?":
-                                                                                                                    michaelbloom "We don't marry."
+                                                                                                                "How do you know that this was not a delusion?":
+                                                                                                                    michaelbloom "Because it is sensible."
 
                                                                                                                     menu:
-                                                                                                                        michaelbloom "We don't marry."
+                                                                                                                        michaelbloom "Because it is sensible."
 
-                                                                                                                        "Why not?":
-                                                                                                                            michaelbloom "The End Times are soon. Why would we marry, knowing what is to come?"
+                                                                                                                        "What is sensible? That a Russian-American Korean War veteran living in New York City is the second coming of John the Baptist?":
+                                                                                                                            michaelbloom "Do not mock me."
 
-                                                                                                                            menu:
-                                                                                                                                michaelbloom "The End Times are soon. Why would we marry, knowing what is to come?"
-
-                                                                                                                                "But Genesis 2 commands marriage.":
-                                                                                                                                    michaelbloom "Yes, in the Garden."
-
-                                                                                                                                "But Matthew 19 commands marriage.":
-                                                                                                                                    michaelbloom "Yes, for those that followed Jesus in that time."
-
-                                                                                                                                "Really? None of you marry?":
-                                                                                                                                    michaelbloom "Well, married couples can stay together when they join the Church."
-
-                                                                                                                                    michaelbloom "Some other people marry, with the permission of John."
-
-                                                                                                                                    michaelbloom "But us volunteers don't marry."
-
-                                                                                                                                    menu:
-                                                                                                                                        michaelbloom "But us volunteers don't marry."
-
-                                                                                                                                        "What makes you different from them?":
-                                                                                                                                            michaelbloom "The world needs us right now. We can't get distracted."
-
-                                                                                                                                            menu:
-                                                                                                                                                michaelbloom "The world needs us right now. We can't get distracted."
-
-                                                                                                                                                "You're not a priest or a monk.":
-                                                                                                                                                    michaelbloom "What's the difference between me and them?"
-
-                                                                                                                                                "What, and other people can?":
-                                                                                                                                                    michaelbloom "No. It's just that their roles are different."
-
-                                                                                                                "What about homosexuals?":
-                                                                                                                    michaelbloom "There are no homosexuals in the Church."
-
-                                                                                                                    menu:
-                                                                                                                        michaelbloom "There are no homosexuals in the Church."
-
-                                                                                                                        "Not that you know of.":
-                                                                                                                            michaelbloom "shitarse"
-
-                                                                                                                        "That's not possible.":
-                                                                                                                            michaelbloom "Well, eh."
-
-                                                                                                                        "How's that possible?":
-                                                                                                                            michaelbloom "Once you're baptized by John, you're cleansed of sin."
+                                                                                                                            michaelbloom "Is it less sensible than Moses being adopted by the family of Pharoah, and then liberating His people from that same Pharoah?"
 
                                                                                                                             menu:
-                                                                                                                                michaelbloom "Once you're baptized by John, you're cleansed of sin."
+                                                                                                                                michaelbloom "Is it less sensible than Moses being adopted by the family of Pharoah, and then liberating His people from that same Pharoah?"
 
-                                                                                                                                "No past transgressions matter, no matter how grievous?":
-                                                                                                                                    michaelbloom "No."
+                                                                                                                                "What about witnesses? Records? Anthropological evidence?":
+                                                                                                                                    michaelbloom "Present me with such evidence for Genesis, or Exodus! Yet we all believe these stories, to some extent or another."
 
-                                                                                                                                "What if the baptism is insincere?":
-                                                                                                                                    michaelbloom "Shitarse."
+                                                                                                                                    label talkingincircles:
+                                                                                                                                        show frankwilliams at right
 
-                                                                                                                                "Surely that doesn't stop you from 'sinning' again?":
-                                                                                                                                    michaelbloom "If someone sins after baptism, they weren't sincere in the first place, and they're out of the Church."
+                                                                                                                                        frankwilliams "We're talking in circles here."
 
-                                                                                                                                    menu:
-                                                                                                                                        michaelbloom "If someone sins after baptism, they weren't sincere in the first place, and they're out of the Church."
+                                                                                                                                        frankwilliams "Georgy Sokolov is delusional, yes, but it's nearly impossible to prove to someone who believes it."
 
-                                                                                                                                        "But everything before baptism is fine?":
-                                                                                                                                            michaelbloom "shitarse"
+                                                                                                                                        frankwilliams "Drop this, and try something else."
 
-                                                                                                                                        "So, Georgy can't tell the difference between the sincere and the insincere?":
-                                                                                                                                            michaelbloom "Shitarse"
+                                                                                                                                        hide frankwilliams
 
-                                                                                                                                        "What, after one mistake someone is thrown out?":
-                                                                                                                                            michaelbloom "It can depend on the mistake and the person. But sometimes, sure."
+                                                                                                                                        jump michaelbloomroot
 
-                                                                                                                                            menu:
-                                                                                                                                                michaelbloom "It can depend on the mistake and the person. But sometimes, sure."
+                                                                            "No, something else.":
+                                                                                michaelbloom "Muslim, Hindu, Buddhist, Sikh, whatever."
 
-                                                                                                                                                "Sounds like the Church has a double standard.":
-                                                                                                                                                    michaelbloom "Well think of it like this..."
+                                                                                michaelbloom "'Salvation is found in no one else, for there is no other name under heaven given to mankind by which we must be saved'."
 
-                                                                                                                                                    michaelbloom "Would you let off a man who had never stolen before, but got caught stealing bread to feed his family?"
+                                                                                michaelbloom "Acts 4:12."
 
-                                                                                                                                                    menu:
-                                                                                                                                                        michaelbloom "Would you let off a man who had never stolen before, but got caught stealing bread to feed his family?"
+                                                                                show frankwilliams at right
 
-                                                                                                                                                        "Yes.":
-                                                                                                                                                            michaelbloom "Would you also let off a career criminal, a bank robber, who stole millions of dollars to add to his fortune?"
+                                                                                frankwilliams "Don't bring your own beliefs into this."
 
-                                                                                                                                                            michaelbloom "Circumstances must be considered."
+                                                                                frankwilliams "Remember, you're trying to deprogram, not convert."
 
-                                                                                                                                                            menu:
-                                                                                                                                                                michaelbloom "Circumstances must be considered."
+                                                                                frankwilliams "Try something else."
 
-                                                                                                                                                                "But who makes that judgement?":
-                                                                                                                                                                    michaelbloom "John or one of the family decide."
+                                                                                jump michaelbloomroot
 
-                                                                                                                                                                "So, anyone who has homosexual relations is expelled? Or is it only 'serial' homosexuals?":
-                                                                                                                                                                    michaelbloom "Smartass."
+                                                            "No. He was not.":
+                                                                michaelbloom "What makes them any different?"
 
-                                                                                                                                                        "No.":
-                                                                                                                                                            michaelbloom "What, circumstances shouldn't be considered when making judgement?"
+                                                                jump talkingincircles
 
-                                                                                                                                                        "I'm not interested in metaphors.":
-                                                                                                                                                            michaelbloom "I'm just rying to say, shouldn't circumstances be considered when making judgement?"
+                                                    "He's a conman.":
+                                                        michaelbloom "No."
 
-                                                                                                                                                "So, are there different punishments for different infractions?":
-                                                                                                                                                    michaelbloom "shitarse"
+                                                    "He's a hypocrite.":
+                                                        michaelbloom "a"
 
-                                                                                                                                                "What happens when someone is 'thrown out'?":
-                                                                                                                                                    michaelbloom "They leave. Same as any other Church."
+                                            "About the Church...":
+                                                michaelbloom "What about it?"
 
-                                                                                                                                                    menu:
-                                                                                                                                                        michaelbloom "They leave. Same as any other Church."
+                                                menu:
+                                                    michaelbloom "What about it?"
 
-                                                                                                                                                        "What about their room and board?":
-                                                                                                                                                            michaelbloom "They lose it. Does a Priest keep their church if they're excommunicated?"
+                                                    "It's controlling you.":
+                                                        michaelbloom "a"
 
-                                                                                                                                                        "And what about all the money they gave to the Church?":
-                                                                                                                                                            michaelbloom "They gave it. It was a donation. God doesn't give refunds."
+                                                    "It just wants your money.":
+                                                        michaelbloom "a"
 
-                                                                                                                                                        "What about their friends in the Church?":
-                                                                                                                                                            michaelbloom "They disconnect. They stop talking."
+                                                    "It's hypocritical.":
+                                                        michaelbloom "a"
 
-                                                                                                                                                            label .disconnect:
-                                                                                                                                                                menu:
-                                                                                                                                                                    michaelbloom "They disconnect. They stop talking."
+                                            "About you...":
+                                                michaelbloom "What about me?"
 
-                                                                                                                                                                    "What happens if they don't stop talking?":
-                                                                                                                                                                        michaelbloom "Well, then they're excommunicated too."
+                                                menu:
+                                                    michaelbloom "What about me?"
 
-                                                                                                                                                                        jump .disconnect
+                                                    "I think you have internalized oppression. You reject your own Jewishness.":
+                                                        michaelbloom "I don't 'reject my own Jewishness'. I see with my own two eyes, not through the eyes of a Rabbi."
 
-                                                                                                                                                                    "Will someone be excommunicated for speaking against the Church?":
-                                                                                                                                                                        michaelbloom "Obviously."
+                                                        menu:
+                                                            michaelbloom "I don't 'reject my own Jewishness'. I see with my own two eyes, not through the eyes of a Rabbi."
 
-                                                                                                                                                                        jump .disconnect
+                                                            "It is more than that. You do not even consider yourself Jewish.":
+                                                                michaelbloom "I'm not Jewish."
 
-                                                                                                                                                                    "Can someone leave the Church without being 'disconnected'?":
-                                                                                                                                                                        michaelbloom "The circumstances of leaving usually aren't pleasant."
+                                                                menu:
+                                                                    michaelbloom "I'm not Jewish."
 
-                                                                                                                                                                        michaelbloom "People leave because they get sad and frustrated."
+                                                                    "Being Jewish is more than your religion: it's your ethnicity, your culture, your people.":
+                                                                        michaelbloom "What do those things matter in the Kingdom of God?"
 
-                                                                                                                                                                        michaelbloom "They're not strong enough to hold on until the end."
+                                                                        menu:
+                                                                            michaelbloom "What do those things matter in the Kingdom of God?"
 
-                                                                                                                                                                        michaelbloom "So, yeah. We usually disconnect from them too."
+                                                                            "They do not matter; but on Earth they are everything.":
+                                                                                michaelbloom "fr. fr."
 
-                                                                                                                                                                        menu:
-                                                                                                                                                                            michaelbloom "So, yeah. We usually disconnect from them too."
+                                                    "Your parents worry what Georgy might be doing to you.":
+                                                        michaelbloom "In what sense?"
 
-                                                                                                                                                                            "So, let me get this straight...":
-                                                                                                                                                                                menu:
-                                                                                                                                                                                    "So, let me get this straight..."
+                                                    "You are a hateful person, aren't you?":
+                                                        michaelbloom "Fuck you."
+                                    else:
+                                        michaelbloom "Oh God..."
 
-                                                                                                                                                                                    "... People give whatever money they have to the Church ...":
-                                                                                                                                                                                        menu:
-                                                                                                                                                                                            "... People give whatever money they have to the Church ..."
+                                        michaelbloom "It's not real, is it?"
 
-                                                                                                                                                                                            "... They become 'volunteers' with room and board ...":
-                                                                                                                                                                                                menu:
-                                                                                                                                                                                                    "... They become 'volunteers' with room and board ..."
+                                        michaelbloom "All the money I've given, all the time I've wasted, all for nothing!"
 
-                                                                                                                                                                                                    "... But can be kicked out and cut off from any help at any time ...":
-                                                                                                                                                                                                        menu:
-                                                                                                                                                                                                            "... But can be kicked out and cut off from any help at any time ..."
+                                        michaelbloom "Years of my life, gone..."
 
-                                                                                                                                                                                                            "... By a single person or a group of people with absolutely no accountability?":
-                                                                                                                                                                                                                michaelbloom "..."
+                                        michaelbloom "And my parents!"
 
-                                                                                                                                                                                                                michaelbloom "I know what you're trying to do."
+                                        michaelbloom "Please, let me see my parents."
 
-                                                                                                                                                                                                                michaelbloom "You're trying to make me think ill of John, and ill of the family."
-
-                                                                                                                                                                                                                michaelbloom "Well it won't work!"
-
-                                                                                                                                                                                                                michaelbloom "John was chosen by God."
-
-                                                                                                                                                                                                                michaelbloom "His family are trusted by him."
-
-                                                                                                                                                                                                                michaelbloom "They will not err."
-
-                                                                                                                        "So you've never felt 'tempted' by Simeon?":
-                                                                                                                            michaelbloom "Fuck you."
-
-                                        "About the Church...":
-                                            michaelbloom "We're almost in the end times. I hope to be saved."
-
-                                            menu:
-                                                michaelbloom "We're almost in the end times. I hope to be saved."
-
-                                                "What do you mean by 'almost'?":
-                                                    michaelbloom "The Jews are gathered in Israel."
-
-                                                    michaelbloom "There is conflict on the Temple Mount."
-
-                                                    michaelbloom "And every day we risk destruction."
-
-                                                    menu:
-                                                        michaelbloom "And every day we risk destruction."
-
-                                                        "What do you mean, 'the Jews are gathered in Israel?'":
-                                                            michaelbloom "I think that's pretty obvious, right?"
-
-                                                            michaelbloom "Ezekiel 47."
-
-                                                            michaelbloom "For the first time in nearly two millenia they are back in the Holy Land - this is a condition of the End Times."
-
-                                                            menu:
-                                                                michaelbloom "For the first time in nearly two millenia they are back in the Holy Land - this is a condition of the End Times."
-
-                                                                "'They?' You're Jewish, you know.":
-                                                                    michaelbloom "I was Jewish. Then I repented."
-
-                                                                    menu:
-                                                                        michaelbloom "I was Jewish. Then I repented."
-
-                                                                        "'Repented?' Is it a sin to be Jewish?":
-                                                                            michaelbloom "No. But we must accept Christ as the Messiah."
-
-                                                                            micahelbloom "We must repent for having ignored Him, before His Second Coming."
-
-
-
-                                                                "Why, so they can be converted?":
-                                                                    michaelbloom "Yes! When Christ returns, then they'll all see."
-
-                                                                    menu:
-                                                                        michaelbloom "Yes! When Christ returns, then they'll all see."
-
-                                                                        "Jews are people, you know. They don't just exist to be converted.":
-                                                                            michaelbloom "Everyone lives to serve Christ."
-
-                                                        "What do you mean, 'there is conflict on the Temple Mount'?":
-                                                            michaelbloom "Matthew 24."
-
-                                                            michaelbloom "Jesus Christ predicted the destruction of Herod's Temple."
-
-                                                            michaelbloom "Ezekiel 40."
-
-                                                            michaelbloom "Measurements have already been given for a new Temple."
-
-                                                            michaelbloom "In His Kingdom, Christ will build that Third Temple."
-
-                                                "What do you mean by 'end times'?":
-                                                    michaelbloom "I mean the end times. The apocalypse."
-
-                                        "About you...":
-                                            michaelbloom "What about me?"
-
+                                        jump case1scene10
             "Are you okay?":
                 frankwilliams "I'll be fine once I have some water."
 
@@ -2072,6 +1930,15 @@ label start:
                 frankwilliams "He's never been better."
 
                 jump .deprogramming
+
+
+    #### Case 1 Scene 10 ####
+
+    label case1scene10:
+
+
+
+        scene case1scene8
 
     #### The ending where you simply do not become a deprogrammer ####
 

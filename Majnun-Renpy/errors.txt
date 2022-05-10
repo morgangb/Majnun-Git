@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1698: expected menuitem
-    menu:
-    ^
+File "game/script.rpy", line 1832: expected statement.
+    jumpmichaelbloomroot
+                        ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon May  9 23:32:40 2022
+Tue May 10 15:52:58 2022
