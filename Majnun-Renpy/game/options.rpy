@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "appeal"
+define build.name = "AnAppealToHeaven"
 
 ## Turn off anti-aliasing for sprites
 define config.nearest_neighbor = True

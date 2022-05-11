@@ -45,26 +45,13 @@ label start:
 
     #### A debug menu for testing ####
 
+    jump case1scene5
+
     scene black
 
     "This game is a work of fiction inspired by real people, movements, and events."
 
     "Its content may not be suitable for all players."
-
-    menu:
-        "Select scene."
-
-        "Case 1, Scene 9":
-            jump case1scene9
-
-        "Case 1, Scene 7":
-            jump case1scene7
-
-        "Case 1, Scene 3":
-            jump case1scene3
-
-        "Case 1, Scene 4":
-            jump case1scene4
 
     #### Case 1 Scene 1 ####
 
@@ -1628,6 +1615,112 @@ label start:
 
         mrsbloom "Sorry, there's not really an etiquette for this kind of thing, is there?"
 
+        mrbloom "Frank says you're new at this. You must think we're awful people. Having our own son abducted."
+
+        mrbloom "But we're worried about him. He's never been able to... fit in. Even with other Jewish kids."
+
+        mrbloom "And that asshole, Georgy Sokolov, he might be exploiting that."
+
+        if not distracted:
+            "The doorbell rings."
+
+            newbaptistwoman "Open up, before we call the cops! We know you have Michael in there."
+
+            "David gets up."
+
+            show davidlee at center
+
+            davidlee "Shit, they must have followed us."
+
+            mrbloom "What do we do?"
+
+            davidlee "Mr. Bloom, wait here with your wife."
+
+            davidlee "Come on, [firstname], let's deal with this."
+
+            scene case1scene7
+
+            show davidlee at center
+
+            "The New Baptist woman that Michael was with earlier is now flanked by three others."
+
+            newbaptistwoman "Ah, you're... David Lee, right?"
+
+            newbaptistwoman "Yeah, we've been briefed on you. Is Frank Williams in there too?"
+
+            "She turns to you."
+
+            newbaptistwoman "You know what you're doing is illegal, right?"
+
+            davidlee "What, you think you have the upper hand here?"
+
+            davidlee "You're four crazy, anti-semitic cultists standing on the boundary of the private property of a Jewish family."
+
+            davidlee "You're ringing the doorbell and demanding to be let in so you can take away a boy?"
+
+            davidlee "The cops are not on your side right now."
+
+            newbaptistwoman "We're good Christians, members of a church that does a lot of charity work, including with the Government of California."
+
+            newbaptistwoman "You do not have the upper hand."
+
+            davidlee "So call the cops, then. You won't take the risk."
+
+            newbaptistwoman "Neither will you."
+
+            "She looks at you again."
+
+            newbaptistwoman "You seem reasonable. And young. I'm sure you've got prospects."
+
+            newbaptistwoman "This was all a mistake."
+
+            menu:
+                newbaptistwoman "Let us in. We'll take Michael, and we can all be on our way."
+
+                "Alright, come inside.":
+                    newbaptistwoman "Good."
+
+                    davidlee "What the fuck do you think you're doing?"
+
+                    menu:
+                        davidlee "What the fuck do you think you're doing?"
+
+                        "I don't want this to ruin my life, David.":
+                            davidlee "Then you're nothing but a selfish bastard."
+
+                            label giveup:
+                                "You lead the Church members inside, and they leave with Michael."
+
+                                "Meanwhile, Frank, David, and the Blooms protest and scream at you."
+
+                                "You take a taxi back to Berkeley."
+
+                            jump roaduntaken
+
+                        "This is more than I expected. I can't do this.":
+                            davidlee "You're a fucking coward, [firstname]."
+
+                            jump giveup
+
+                "Not a chance.":
+                    davidlee "If you lay a single fucking toe on this property, we will call the cops."
+
+                    davidlee "Try and get into the house, and we shoot you."
+
+                    davidlee "We're just standing our ground. Understand?"
+
+                    "David turns and you both go back inside."
+
+                    scene case1scene8
+
+                    "Out of the window, you can see the Church members watching the house."
+
+                    davidlee "Mr. Bloom, do you have a gun?"
+
+                    mrbloom "Yes, I do... I've never fired it."
+
+                    davidlee "Hopefully you won't have to. Get it, and keep it close."
+
         "Frank's voice booms from upstairs."
 
         frankwilliams "[firstname]! Get up here!"
@@ -1689,238 +1782,52 @@ label start:
                                 michaelbloom "Well...?"
 
                                 label michaelbloomroot:
-                                    if will > 0:
-                                        menu:
-                                            michaelbloom "Well...?"
+                                    michaelbloom "You cannot vanquish my love."
 
-                                            "About Georgy...":
-                                                michaelbloom "What about John?"
+                                    show frankwilliams at right
 
+                                    frankwilliams "Why do you love John so much?"
+
+                                    michaelbloom "He has saved me."
+
+                                    frankwilliams "Really? There's nothing more to it?"
+
+                                    menu:
+                                        frankwilliams "Really? There's nothing more to it?"
+
+                                        "You know, your parents told me you never really fit in.":
+                                            michaelbloom "You shut up. You don't know what you're talking about."
+
+                                            frankwilliams "John never touched you?"
+
+                                            michaelbloom "Only to baptize me!"
+
+                                            frankwilliams "And you never wanted more?"
+
+                                            michaelbloom "Who wouldn't!?"
+
+                                            michaelbloom "With him I am loved. Unconditionally."
+
+                                            frankwilliams "No, you're not."
+
+                                            label .unconditionallove:
                                                 menu:
-                                                    michaelbloom "What about John?"
+                                                    michaelbloom "No, you're not."
 
-                                                    "He's delusional.":
-                                                        michaelbloom "Would you have said the same of the first John, almost 2000 years ago?"
+                                                    "What happens if you stop 'volunteering'? You are hated and reviled!":
+                                                        michaelbloom "And I would deserve it, too!"
 
-                                                        menu:
-                                                            michaelbloom "Would you have said the same of the first John, almost 2000 years ago?"
+                                                        jump .unconditionallove
 
-                                                            "Yes. He was delusional too.":
-                                                                michaelbloom "Not even a Christian, huh? Do you even believe in God?"
+                                                    "Georgy doesn't love you unconditionally, but your parents do.":
+                                                        michaelbloom "Oh God... Oh God what have I done to them?"
 
-                                                                menu:
-                                                                    michaelbloom "Not even a Christian, huh? Do you even believe in God?"
+                                                        "Michael puts his head in his hands, and begins to sob."
 
-                                                                    "Yes, I do.":
-                                                                        michaelbloom "Ah, so you're a Jew, then."
+                                                        michaelbloom "Please, let me see them."
 
-                                                                        menu:
-                                                                            michaelbloom "Ah, so you're a Jew, then."
+                                                        jump case1scene10
 
-                                                                            "Yes, I am.":
-                                                                                michaelbloom "Then I'm not the delusional one, you are. And my parents are."
-
-                                                                                michaelbloom "The Jews waited thousands of years for a Messiah, and when He came they denied Him!"
-
-                                                                                michaelbloom "They still wait today."
-
-                                                                                label theystillwaittoday:
-                                                                                    menu:
-                                                                                        michaelbloom "They still wait today."
-
-                                                                                        "Jesus Christ was not the Messiah.":
-                                                                                            michaelbloom "Why not?"
-
-                                                                                            menu:
-                                                                                                michaelbloom "Why not?"
-
-                                                                                                "He did not build the Third Temple - Ezekiel 37:27.":
-                                                                                                    michaelbloom "Why do you insist that the Temple must be a building?"
-
-                                                                                                    michaelbloom "'My dwelling place will be with them...'"
-
-                                                                                                    michaelbloom "Is that not Christ, the Son, going among the people of Israel?"
-
-                                                                                                    label quitit:
-                                                                                                        show frankwilliams at right
-
-                                                                                                        frankwilliams "[firstname], cut it out."
-
-                                                                                                        frankwilliams "There are millions of Christians across the world who believe in God and Christ, myself included."
-
-                                                                                                        frankwilliams "I respect your beliefs, but you cannot shake someone out of believing in God or Christ."
-
-                                                                                                        frankwilliams "That's not the issue with what Michael believes."
-
-                                                                                                        frankwilliams "Try something else."
-
-                                                                                                        jump michaelbloomroot
-
-                                                                                                "He did not gather all the Jews back to Israel - Isaiah 43.":
-                                                                                                    michaelbloom "That prophecy was retroactively imposed upon Isaiah, after the Coming of Christ."
-
-                                                                                                    michaelbloom "When Christ came, the Jews had already lived in Israel for centuries, although they had been subjugated by the Romans."
-
-                                                                                                    michaelbloom "And where are most Jews today? Israel, once again."
-
-                                                                                                    jump quitit
-
-                                                                                                "He did not create an age of peace - Isaiah 2:4.":
-                                                                                                    michaelbloom "How many Christian nations have had peace and co-operation in times past?"
-
-                                                                                                    michaelbloom "Many more will there be in the future, when Christ returns and unites all under His banner!"
-
-                                                                                                    jump quitit
-
-                                                                                        "And you still await the Second Coming, after thousands of years.":
-                                                                                            michaelbloom "Yes, we do, and He will be here soon."
-
-                                                                                            label hewillbeheresoon:
-                                                                                                menu:
-                                                                                                    michaelbloom "Yes, we do, and He will be here soon."
-
-                                                                                                    "What makes you think that Georgy's prediction is any different from the hundreds of others?":
-                                                                                                        michaelbloom "Because John received his mission from God."
-
-                                                                                                        jump toldjohn
-
-                                                                                                    "Matthew 24:23. 'At that time if anyone says to you, 'Look, here is the Messiah!' or, 'There he is!' do not believe it.'":
-                                                                                                        michaelbloom "But John does not tell us, 'Here is the Messiah!'"
-
-                                                                                                        michaelbloom "He only tells us that He approaches, just as the first John did in the first Coming of Christ."
-
-                                                                                                        jump hewillbeheresoon
-
-                                                                                                    "Matthew 24:36. 'But about that day or hour no one knows.'":
-                                                                                                        michaelbloom "You stopped short on that verse."
-
-                                                                                                        michaelbloom "'But about that day or hour no one knows, not even the angels in heaven, nor the Son, but only the Father.'"
-
-                                                                                                        label toldjohn:
-                                                                                                            michaelbloom "And He has told John."
-
-                                                                                                            menu:
-                                                                                                                michaelbloom "And He has told John."
-
-                                                                                                                "How do you know that this was not a delusion?":
-                                                                                                                    michaelbloom "Because it is sensible."
-
-                                                                                                                    menu:
-                                                                                                                        michaelbloom "Because it is sensible."
-
-                                                                                                                        "What is sensible? That a Russian-American Korean War veteran living in New York City is the second coming of John the Baptist?":
-                                                                                                                            michaelbloom "Do not mock me."
-
-                                                                                                                            michaelbloom "Is it less sensible than Moses being adopted by the family of Pharoah, and then liberating His people from that same Pharoah?"
-
-                                                                                                                            menu:
-                                                                                                                                michaelbloom "Is it less sensible than Moses being adopted by the family of Pharoah, and then liberating His people from that same Pharoah?"
-
-                                                                                                                                "What about witnesses? Records? Anthropological evidence?":
-                                                                                                                                    michaelbloom "Present me with such evidence for Genesis, or Exodus! Yet we all believe these stories, to some extent or another."
-
-                                                                                                                                    label talkingincircles:
-                                                                                                                                        show frankwilliams at right
-
-                                                                                                                                        frankwilliams "We're talking in circles here."
-
-                                                                                                                                        frankwilliams "Georgy Sokolov is delusional, yes, but it's nearly impossible to prove to someone who believes it."
-
-                                                                                                                                        frankwilliams "Drop this, and try something else."
-
-                                                                                                                                        hide frankwilliams
-
-                                                                                                                                        jump michaelbloomroot
-
-                                                                            "No, something else.":
-                                                                                michaelbloom "Muslim, Hindu, Buddhist, Sikh, whatever."
-
-                                                                                michaelbloom "'Salvation is found in no one else, for there is no other name under heaven given to mankind by which we must be saved'."
-
-                                                                                michaelbloom "Acts 4:12."
-
-                                                                                show frankwilliams at right
-
-                                                                                frankwilliams "Don't bring your own beliefs into this."
-
-                                                                                frankwilliams "Remember, you're trying to deprogram, not convert."
-
-                                                                                frankwilliams "Try something else."
-
-                                                                                jump michaelbloomroot
-
-                                                            "No. He was not.":
-                                                                michaelbloom "What makes them any different?"
-
-                                                                jump talkingincircles
-
-                                                    "He's a conman.":
-                                                        michaelbloom "No."
-
-                                                    "He's a hypocrite.":
-                                                        michaelbloom "a"
-
-                                            "About the Church...":
-                                                michaelbloom "What about it?"
-
-                                                menu:
-                                                    michaelbloom "What about it?"
-
-                                                    "It's controlling you.":
-                                                        michaelbloom "a"
-
-                                                    "It just wants your money.":
-                                                        michaelbloom "a"
-
-                                                    "It's hypocritical.":
-                                                        michaelbloom "a"
-
-                                            "About you...":
-                                                michaelbloom "What about me?"
-
-                                                menu:
-                                                    michaelbloom "What about me?"
-
-                                                    "I think you have internalized oppression. You reject your own Jewishness.":
-                                                        michaelbloom "I don't 'reject my own Jewishness'. I see with my own two eyes, not through the eyes of a Rabbi."
-
-                                                        menu:
-                                                            michaelbloom "I don't 'reject my own Jewishness'. I see with my own two eyes, not through the eyes of a Rabbi."
-
-                                                            "It is more than that. You do not even consider yourself Jewish.":
-                                                                michaelbloom "I'm not Jewish."
-
-                                                                menu:
-                                                                    michaelbloom "I'm not Jewish."
-
-                                                                    "Being Jewish is more than your religion: it's your ethnicity, your culture, your people.":
-                                                                        michaelbloom "What do those things matter in the Kingdom of God?"
-
-                                                                        menu:
-                                                                            michaelbloom "What do those things matter in the Kingdom of God?"
-
-                                                                            "They do not matter; but on Earth they are everything.":
-                                                                                michaelbloom "fr. fr."
-
-                                                    "Your parents worry what Georgy might be doing to you.":
-                                                        michaelbloom "In what sense?"
-
-                                                    "You are a hateful person, aren't you?":
-                                                        michaelbloom "Fuck you."
-                                    else:
-                                        michaelbloom "Oh God..."
-
-                                        michaelbloom "It's not real, is it?"
-
-                                        michaelbloom "All the money I've given, all the time I've wasted, all for nothing!"
-
-                                        michaelbloom "Years of my life, gone..."
-
-                                        michaelbloom "And my parents!"
-
-                                        michaelbloom "Please, let me see my parents."
-
-                                        jump case1scene10
             "Are you okay?":
                 frankwilliams "I'll be fine once I have some water."
 
@@ -1931,14 +1838,44 @@ label start:
 
                 jump .deprogramming
 
-
     #### Case 1 Scene 10 ####
 
     label case1scene10:
-
-
-
         scene case1scene8
+
+        "As you come downstairs, Michael rushes to his parents."
+
+        "They embrace, tearfully."
+
+        show frankwilliams at center
+
+        "Frank pulls you aside."
+
+        frankwilliams "You did pretty good today, [firstname]."
+
+        frankwilliams "The way I see it, cults aren't going anywhere. There's hundreds more kids like Michael out in the world."
+
+        frankwilliams "I know you're a student but afterwards... I'll be in touch. If that's what you want."
+
+        menu:
+            frankwilliams "I know you're a student but afterwards... I'll be in touch. If that's what you want."
+
+            "Yeah, I'd like that.":
+                frankwilliams "Good. I'll see you soon."
+
+                jump deprogrammer
+
+            "No, thanks.":
+                frankwilliams "Alright then. See you around."
+
+                jump roaduntaken
+
+    #### The ending where you do become a deprogrammer ####
+
+    label deprogrammer:
+        "A few months later, you complete your PhD, and head to the newly-bought headquarters of Anti-Cult Action."
+
+        jump credits
 
     #### The ending where you simply do not become a deprogrammer ####
 
@@ -1949,4 +1886,19 @@ label start:
 
         "You finish your PhD in 1979, and become a professor of psychology at UCLA."
 
-        "You stop going to the support group in 1980."
+        jump credits
+
+    #### Credits ####
+
+    label credits:
+        "Thank you for playing."
+
+        "Game by Morgan Brown."
+
+        "Music by Theodora Angelidou."
+
+        "Creative Consultancy by Alexander Ilderton and Cameron Yates."
+
+        "Made using the Ren'Py game engine."
+
+        "With font Silver by Poppy Works."
